@@ -19,26 +19,37 @@ let package = Package(
         .target(
             name: "Autofill_Aggregation",
             dependencies: ["Autofill"],
+            packageAccess: false,
             swiftSettings: [.define("SCIPIO_PRECOMPILED_BINARY_WRAPPER")]
         ),
         .binaryTarget(
             name: "Autofill",
-            url: "https://github.com/swift-precompiled/duckduckgo-autofill/releases/download/19.2.0/Autofill-83ddb66f0d21da67ea814511f9b59609bc40e7710d6acf3efeeb94466d172c87.xcframework.zip",
-            checksum: "83ddb66f0d21da67ea814511f9b59609bc40e7710d6acf3efeeb94466d172c87"
+            url: "https://github.com/swift-precompiled/duckduckgo-autofill/releases/download/19.2.0/Autofill-a0289ef46e70db1c5f489b63c1208b9e24295f0af4495930b41206db016938e6.xcframework.zip",
+            checksum: "a0289ef46e70db1c5f489b63c1208b9e24295f0af4495930b41206db016938e6"
         ),
         .target(
             name: "AutofillResources_Aggregation",
             dependencies: ["AutofillResources"],
+            resources: [
+                .copy("autofill.js"),
+                .copy("autofill-debug.js"),
+                .copy("autofill.css"),
+                .copy("autofill-design-tokens.css"),
+                .copy("shared-credentials.json"),
+                .copy("TopAutofill.html")
+            ],
+            packageAccess: false,
             swiftSettings: [.define("SCIPIO_PRECOMPILED_BINARY_WRAPPER")]
         ),
         .binaryTarget(
             name: "AutofillResources",
-            url: "https://github.com/swift-precompiled/duckduckgo-autofill/releases/download/19.2.0/AutofillResources-79cbb392db87bad67ba812992fd1a88bd82f39b0eaa0bb943f3eaf16a7c6d73f.xcframework.zip",
-            checksum: "79cbb392db87bad67ba812992fd1a88bd82f39b0eaa0bb943f3eaf16a7c6d73f"
+            url: "https://github.com/swift-precompiled/duckduckgo-autofill/releases/download/19.2.0/AutofillResources-a3b158b4fd7825557e33ff014541af627f52d2a58cf780ac35f72392a3505204.xcframework.zip",
+            checksum: "a3b158b4fd7825557e33ff014541af627f52d2a58cf780ac35f72392a3505204"
         ),
         .target(
             name: "Autofill_PrecompiledProduct",
-            dependencies: ["Autofill_Aggregation", "AutofillResources_Aggregation"]
+            dependencies: ["Autofill_Aggregation", "AutofillResources_Aggregation"],
+            packageAccess: false
         )
     ]
 )
