@@ -8,7 +8,11 @@ let package = Package(
     products: [
         .library(
             name: "Autofill",
-            targets: ["Autofill_PrecompiledProduct"]
+            targets: [
+                "Autofill",
+                "AutofillResources",
+                "Autofill_PrecompiledProduct"
+            ]
         )
     ],
     targets: [
@@ -29,8 +33,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "AutofillResources",
-            url: "https://github.com/swift-precompiled/duckduckgo-autofill/releases/download/19.2.0/AutofillResources-3f922852c024c1c4f142b3a53123b80b5dfc20541a44e60d4d99290d20b37767.xcframework.zip",
-            checksum: "3f922852c024c1c4f142b3a53123b80b5dfc20541a44e60d4d99290d20b37767"
+            url: "https://github.com/swift-precompiled/duckduckgo-autofill/releases/download/19.2.0/AutofillResources-79cbb392db87bad67ba812992fd1a88bd82f39b0eaa0bb943f3eaf16a7c6d73f.xcframework.zip",
+            checksum: "79cbb392db87bad67ba812992fd1a88bd82f39b0eaa0bb943f3eaf16a7c6d73f"
         ),
         .target(
             name: "Autofill_PrecompiledProduct",
